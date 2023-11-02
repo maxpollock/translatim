@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <div className="titles">
-        <h1>my translatim</h1>
+        <h1>my transla<span id="tim">tim</span></h1>
         <h2>where language and gifs come together</h2>
       </div>
       <form onSubmit={handleTranslate}>
