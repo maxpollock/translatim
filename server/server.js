@@ -16,25 +16,13 @@ app.get("/translate", async (request, response) => {
 
   const imgAPI = `https://g.tenor.com/v1/search?q=${res.data.responseData.translatedText}&key=LIVDSRZULELA&limit=1`;
   const imgRes = await axios.get(imgAPI);
-  const image = imgRes.data.results[0].media[0].gif.url
+  const image = imgRes.data.results[0].media[0].gif.url;
 
   response.json({
     image,
     translation: res.data.responseData.translatedText,
     match: res.data.responseData.match,
-  })
+  });
 });
-
-// app.get("/gif", async(request, response) => {
-//   const { translate } = request.query;
-
-//   const imgAPI = `https://g.tenor.com/v1/search?q=${translate}&key=LIVDSRZULELA&limit=1`;
-//   const imgRes = await axios.get(imgAPI);
-//   const image = imgRes.data.results[0].media[0].gif.url
-
-//   response.json({
-//     image
-//   })
-// })
 
 app.listen(PORT, () => console.log(`App is running PORT ${PORT}`));

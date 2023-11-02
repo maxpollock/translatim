@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+.titles {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+form {
+  margin: 4rem auto;
+  text-align: center;
+  width: 30%;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 60px 30px;
+}

@@ -9,18 +9,21 @@ function App() {
   const [translation, setTranslation] = useState("");
   const [img, setImg] = useState("");
 
-  // onsubmit function that calls the API to get the translation
   async function handleTranslate(event) {
     event.preventDefault();
-    const API = `http://localhost:8080/translate?word=${word}&from=${from}&to=${to}`;
+    const API = `https://translatim-backend.onrender.com/translate?word=${word}&from=${from}&to=${to}`;
     const res = await axios.get(API);
-  
+
     setTranslation(res.data.translation);
     setImg(res.data.image);
   }
 
   return (
     <>
+      <div className="titles">
+        <h1>my translatim</h1>
+        <h2>where gifs and language come together</h2>
+      </div>
       <form onSubmit={handleTranslate}>
         <div className="container">
           <select onChange={(event) => setFrom(event.target.value)}>
@@ -43,7 +46,7 @@ function App() {
             <option value="es">Spanish</option>
             <option value="tr">Turkish</option>
           </select>
-          <input value={translation} readOnly placeholder="Translation"/>
+          <input value={translation} readOnly placeholder="Translation" />
         </div>
         <button>Translate</button>
       </form>
